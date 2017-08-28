@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+
+    <test name="Test">
+	
+	<!--Computer name for Add Test case. -->
+	<parameter name="Name" value="BA"/>
+	
+	<!--Computer name for Update Test case. -->
+	<parameter name="UName" value="BA"/>
+	
+	<!--Computer name for Delete Test case. -->
+	<parameter name="DName" value="BA"/>
+	
+	<!--The below parametes are common for both Add and Update Tests. -->
+	<parameter name="startDate" value="2016-01-01"/>
+	<parameter name="endDate" value="2016-12-01"/>
+	<parameter name="Company" value="16"/>
+	
+	
+		<classes>
+		    <class name="automationFramework.FirstTestcase">
+		    	<methods>
+					<include name="addComputer" />
+					<include name="updComputer" />
+					<include name="delComputer" />
+				</methods>
+			</class>
+		</classes>
+
+    </test>
+
+</suite>
