@@ -22,7 +22,7 @@ public class HomePage {
 
  }
  
- //Link 'Play sample application — Computer database'
+ //Link 'Play sample application ï¿½ Computer database'
  public WebElement lnk_Home(WebDriver driver) {
 
 	  element = driver.findElement(By.xpath("/html/body/header/h1/a"));
@@ -69,7 +69,7 @@ public class HomePage {
  
  public void startBrowser(WebDriver driver) {
 	 
-	  System.setProperty("webdriver.chrome.driver", driverpath + "chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 	  driver = new ChromeDriver();
 
