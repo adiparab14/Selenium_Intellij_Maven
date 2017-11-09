@@ -13,21 +13,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class FirstTestcase {
 
  //Location of the Chrome Driver for Selenium.
- String driverpath = "C:\\Users\\Priti\\";
+ String driverpath = "C:\\Users\\PA2771\\workspace\\";
 
- public WebDriver driver = null;
+ public static WebDriver driver = null;
 
  @BeforeSuite
- public void startBrowser() {
-  System.setProperty("webdriver.chrome.driver", driverpath + "chromedriver.exe");
-
-  driver = new ChromeDriver();
-
-  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-  driver.get("http://computer-database.herokuapp.com/computers");
-  System.out.println("The webpage is opened in the Browser.");
-
+ public static void setUp(){
+	HomePage Page = new HomePage();
+    Page.startBrowser(driver);
  }
 
  @Test(priority = 1)
@@ -40,26 +33,31 @@ public class FirstTestcase {
  public void addComputer(String Name, String startDate, String endDate, String Company) throws Exception {
 
   try {
-	  HomePage.btn_Add(driver).click();
+	  
+	  HomePage HPage = new HomePage();
+	  DetailsPage Dpage = new DetailsPage();
+	  
+	  HPage.btn_Add(driver).click();
 	
-	  DetailsPage.txtbx_Name(driver).sendKeys(Name);
-	  DetailsPage.txtbx_startDate(driver).sendKeys(startDate);
-	  DetailsPage.txtbx_endDate(driver).sendKeys(endDate);
+	  Dpage.txtbx_Name(driver).sendKeys(Name);
+	  Dpage.txtbx_startDate(driver).sendKeys(startDate);
+	  Dpage.txtbx_endDate(driver).sendKeys(endDate);
 	
 	  if (Company != "") {
-	   DetailsPage.lst_Company(driver).selectByValue(Company);
+		  Dpage.lst_Company(driver).selectByValue(Company);
 	  }
 	
-	  DetailsPage.btn_Create(driver).click();
+	  Dpage.btn_Create(driver).click();
 	
-	  String a = HomePage.alrt_Status(driver).getText();
+	  String a = HPage.alrt_Status(driver).getText();
 	  assertEquals(a, "Done! Computer " + Name + " has been created");
 	  
 	  System.out.println("Computer "+Name+" has been added correctly.");
 } catch (Exception e) {
 
 	 System.out.println("Required elements not found on the screen. Returning to home screen.");
-	 HomePage.lnk_Home(driver).click();
+	 HomePage HPage = new HomePage();
+	 HPage.lnk_Home(driver).click();
 	 throw(e);
 }
  }
@@ -71,7 +69,7 @@ public class FirstTestcase {
   "endDate",
   "Company"
  })
- public void updComputer(String UName, String startDate, String endDate, String Company) throws Exception {
+ /*public void updComputer(String UName, String startDate, String endDate, String Company) throws Exception {
 
   try {
 	  HomePage.txtbx_Filter(driver).sendKeys(UName);
@@ -122,7 +120,7 @@ public class FirstTestcase {
   
   System.out.println("Computer "+Comp+" has been deleted correctly.");
  }
-
+*/
  @AfterSuite
  public void closeBrowser() {
   driver.quit();

@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.Select;
 
 public class DetailsPage {
 
- private static WebElement element = null;
+ private WebElement element = null;
 
  //TextBox 'Computer Name'
- public static WebElement txtbx_Name(WebDriver driver) {
+ public WebElement txtbx_Name(WebDriver driver) {
 
   element = driver.findElement(By.id("name"));
 
@@ -19,7 +19,7 @@ public class DetailsPage {
  }
 
  //Text Box 'Introduced Date'
- public static WebElement txtbx_startDate(WebDriver driver) {
+ public WebElement txtbx_startDate(WebDriver driver) {
 
   element = driver.findElement(By.id("introduced"));
 
@@ -28,7 +28,7 @@ public class DetailsPage {
  }
 
  //Text Box 'Discontinued Date'
- public static WebElement txtbx_endDate(WebDriver driver) {
+ public WebElement txtbx_endDate(WebDriver driver) {
 
   element = driver.findElement(By.id("discontinued"));
 
@@ -37,7 +37,7 @@ public class DetailsPage {
  }
 
  //List 'Company'
- public static Select lst_Company(WebDriver driver) {
+ public Select lst_Company(WebDriver driver) {
 
   Select dropdown = new Select(driver.findElement(By.id("company")));
 
@@ -46,7 +46,7 @@ public class DetailsPage {
  }
 
  //Button 'Create this Computer'
- public static WebElement btn_Create(WebDriver driver) {
+ public WebElement btn_Create(WebDriver driver) {
 
   element = driver.findElement(By.xpath("//*[@id=\"main\"]/form/div/input"));
 
@@ -55,7 +55,7 @@ public class DetailsPage {
  }
 
  //Button 'Delete this Computer'
- public static WebElement btn_Delete(WebDriver driver) {
+ public WebElement btn_Delete(WebDriver driver) {
 
   element = driver.findElement(By.xpath("//*[@id=\"main\"]/form[2]/input"));
 
@@ -64,7 +64,7 @@ public class DetailsPage {
  }
 
  //Button 'Save this Computer'
- public static WebElement btn_Save(WebDriver driver) {
+ public WebElement btn_Save(WebDriver driver) {
 
   element = driver.findElement(By.xpath("//*[@id=\"main\"]/form[1]/div/input"));
 
