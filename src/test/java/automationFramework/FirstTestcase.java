@@ -2,11 +2,16 @@ package automationFramework;
 
 import pageObjects.*;
 import static org.testng.Assert.assertEquals;
+
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -36,6 +41,8 @@ public class FirstTestcase {
 	  
 	  HomePage HPage = new HomePage();
 	  DetailsPage Dpage = new DetailsPage();
+	  
+	  getscreenshot(); 
 	  
 	  HPage.btn_Add(driver).click();
 	
@@ -121,6 +128,14 @@ public class FirstTestcase {
   System.out.println("Computer "+Comp+" has been deleted correctly.");
  }
 */
+ 
+ public void getscreenshot() throws Exception 
+ {
+         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+      //The below method will save the screen shot in d drive with name "screenshot.png"
+         FileUtils.copyFile(scrFile, new File("/screenshot.png"));
+ }
+ 
  @AfterSuite
  public void closeBrowser() {
   driver.quit();
