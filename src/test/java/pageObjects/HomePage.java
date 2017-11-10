@@ -69,7 +69,7 @@ public class HomePage {
  
  public void startBrowser(WebDriver driver) {
 	 
-	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 
 	  driver = new ChromeDriver();
 
