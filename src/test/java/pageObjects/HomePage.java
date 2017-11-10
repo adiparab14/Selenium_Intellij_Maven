@@ -69,8 +69,9 @@ public class HomePage {
  
  public void startBrowser(WebDriver driver) {
 	 
-	  System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-
+	  //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+	  ChromeDriverManager.getInstance().setup();	
+	 
 	  driver = new ChromeDriver();
 
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
