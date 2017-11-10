@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 
 //This is a page object class for the Home Screen.
