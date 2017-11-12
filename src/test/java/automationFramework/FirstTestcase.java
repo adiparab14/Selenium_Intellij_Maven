@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
+import io.github.bonigarcia.wdm.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FirstTestcase {
@@ -19,7 +20,8 @@ public class FirstTestcase {
 
     @BeforeSuite
     public void startBrowser() {
-        System.setProperty("webdriver.chrome.driver", driverpath + "chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", driverpath + "chromedriver.exe");
+        ChromeDriverManager.getInstance().setup();
 
         driver = new ChromeDriver();
 
