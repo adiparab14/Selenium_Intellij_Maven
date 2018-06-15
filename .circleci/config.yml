@@ -1,11 +1,3 @@
 version: 2
-dependencies:
-  pre:
-    - sudo apt-get install libxss1 libappindicator1 libindicator7
-    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - sudo dpkg -i ./google-chrome*.deb
-    - sudo apt-get install -f
-    - wget http://chromedriver.storage.googleapis.com/2.22/chromedriver_linux32.zip
-    - unzip chromedriver_linux32.zip
-    - ./chromedriver --port=4444 --url-base=we/hub:
-        background: true
+jobs:
+  build:
