@@ -105,25 +105,25 @@ public class FirstTestcase {
         }
     }
 
-    @Test(priority = 3)
-    @Parameters({
-            "DName"
-    })
-    public void delComputer(String DName) {
+   // @Test(priority = 3)
+   // @Parameters({
+   //         "DName"
+   // })
+   // public void delComputer(String DName) {
 
-        HomePage.txtbx_Filter(driver).sendKeys(DName);
-        HomePage.btn_Filter(driver).click();
-        HomePage.lnk_SearchElement(driver).click();
+   //     HomePage.txtbx_Filter(driver).sendKeys(DName);
+   //     HomePage.btn_Filter(driver).click();
+   //     HomePage.lnk_SearchElement(driver).click();
 
-        String Comp = DetailsPage.txtbx_Name(driver).getAttribute("value");
-        DetailsPage.btn_Delete(driver).click();
+   //    String Comp = DetailsPage.txtbx_Name(driver).getAttribute("value");
+   //     DetailsPage.btn_Delete(driver).click();
 
 
-        String a = HomePage.alrt_Status(driver).getText();
-        assertEquals(a, "Done! Computer has been deleted");
+   //     String a = HomePage.alrt_Status(driver).getText();
+   //     assertEquals(a, "Done! Computer has been deleted");
 
-        System.out.println("Computer "+Comp+" has been deleted correctly.");
-    }
+   //     System.out.println("Computer "+Comp+" has been deleted correctly.");
+   // }
 
     @AfterSuite
     public void closeBrowser() {
