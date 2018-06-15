@@ -5,10 +5,10 @@ jobs:
       - image: selenium/standalone-chrome:3.1.0
     steps:
       - checkout
-      - run: sudo apt-get install maven
-      - run: mvn dependency:go-offline
       - run: sudo apt-get install software-properties-common
       - run: sudo apt-add-repository universe
       - run: sudo apt-get update
       - run: sudo apt-get install maven
+      - run: sudo apt-get install maven
+      - run: mvn dependency:go-offline
          
