@@ -4,5 +4,6 @@ jobs:
     docker:
       - image: selenium/standalone-chrome:3.1.0
     steps:
-      -name: Run tests
-      -command: mvn test
+      - run:
+        -name: Run tests
+        -command: mvn test
